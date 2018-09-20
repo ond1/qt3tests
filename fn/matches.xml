@@ -640,6 +640,7 @@ defg
    <test-case name="fn-matches-56">
       <description> Matching reluctant quantifier with max cardinality. See Saxon bug 3902</description>
       <created by="Michael Kay" on="2018-09-13"/>
+      <dependency type="spec" value="XP31+" />
       <test>("b", "ab", "aab", "aaab", "aaaab", "aaaaab") ! fn:matches(., "^(a{0,3}?)b")</test>
       <result>
          <assert-deep-eq>true(), true(), true(), true(), false(), false()</assert-deep-eq>
@@ -649,6 +650,7 @@ defg
    <test-case name="fn-matches-57">
       <description> Matching reluctant quantifier with min and max cardinality. See Saxon bug 3902</description>
       <created by="Michael Kay" on="2018-09-13"/>
+      <dependency type="spec" value="XP31+" />
       <test>("b", "ab", "aab", "aaab", "aaaab", "aaaaab") ! fn:matches(., "^(a{2,3}?)b")</test>
       <result>
          <assert-deep-eq>false(), false(), true(), true(), false(), false()</assert-deep-eq>
@@ -658,6 +660,7 @@ defg
    <test-case name="fn-matches-58">
       <description> Matching reluctant quantifier with min cardinality, variable length item that repeats. See Saxon bug 3902</description>
       <created by="Michael Kay" on="2018-09-13"/>
+      <dependency type="spec" value="XP31+" />
       <test>("b", "ab", "aab", "aaab", "aaazab", "aaaaab") ! fn:matches(., "^((az?){3,}?)b")</test>
       <result>
          <assert-deep-eq>false(), false(), false(), true(), true(), true()</assert-deep-eq>
@@ -667,6 +670,7 @@ defg
    <test-case name="fn-matches-59">
       <description> Matching reluctant quantifier with max cardinality, variable length item that repeats. See Saxon bug 3902</description>
       <created by="Michael Kay" on="2018-09-13"/>
+      <dependency type="spec" value="XP31+" />
       <test>("b", "ab", "aazb", "aaab", "aaaab", "aaaaab") ! fn:matches(., "^((az?){0,3}?)b")</test>
       <result>
          <assert-deep-eq>true(), true(), true(), true(), false(), false()</assert-deep-eq>
@@ -676,6 +680,7 @@ defg
    <test-case name="fn-matches-60">
       <description> Matching reluctant quantifier with min and max cardinality, variable length item that repeats. See Saxon bug 3902</description>
       <created by="Michael Kay" on="2018-09-13"/>
+      <dependency type="spec" value="XP31+" />
       <test>("b", "ab", "aazb", "aaab", "aaaab", "aaaaab") ! fn:matches(., "^((az?){2,3}?)b")</test>
       <result>
          <assert-deep-eq>false(), false(), true(), true(), false(), false()</assert-deep-eq>
@@ -685,6 +690,7 @@ defg
    <test-case name="fn-matches-61">
       <description> Matching reluctant quantifier with min and max cardinality, backtracking required. See Saxon bug 3902</description>
       <created by="Michael Kay" on="2018-09-13"/>
+      <dependency type="spec" value="XP31+" />
       <test>("b", "aa", "aaza", "aaaa", "aaaaa", "aaaaaa") ! fn:matches(., "^((az?){2,3}?)a$")</test>
       <result>
          <assert-deep-eq>false(), false(), true(), true(), false(), false()</assert-deep-eq>
